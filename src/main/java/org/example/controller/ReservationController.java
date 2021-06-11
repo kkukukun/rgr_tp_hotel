@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.entity.Client;
 import org.example.entity.Reservation;
 import org.example.repository.Repo;
 import org.example.repository.impl.ReservationRepoImpl;
@@ -24,5 +25,8 @@ public class ReservationController {
 
     public void deleteReservation(Long id) throws SQLException {
         repo.remove(id);
+    }
+    public Reservation getReservationById(Long id) throws SQLException {
+        return (Reservation) repo.getById(id);
     }
 }

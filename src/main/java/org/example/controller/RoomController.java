@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.entity.Client;
 import org.example.entity.Room;
 import org.example.repository.Repo;
 import org.example.repository.impl.RoomRepoImpl;
@@ -24,5 +25,8 @@ public class RoomController {
 
     public void deleteRoom(Long id) throws SQLException {
         repo.remove(id);
+    }
+    public Room getRoomById(Long id) throws SQLException {
+        return (Room) repo.getById(id);
     }
 }

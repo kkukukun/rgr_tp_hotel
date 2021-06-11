@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.entity.Room;
 import org.example.entity.Staff;
 import org.example.repository.Repo;
 import org.example.repository.impl.StaffRepoImpl;
@@ -24,5 +25,9 @@ public class StaffController {
 
     public void deleteStaff(Long id) throws SQLException {
         repo.remove(id);
+    }
+
+    public Staff getStaffById(Long id) throws SQLException {
+        return (Staff) repo.getById(id);
     }
 }

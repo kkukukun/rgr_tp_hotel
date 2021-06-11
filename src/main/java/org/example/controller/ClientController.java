@@ -25,4 +25,8 @@ public class ClientController {
     public void deleteClient(Long id) throws SQLException {
         repo.remove(id);
     }
+
+    public Client getClientById(Long id) throws SQLException {
+        return (Client) repo.getById(id);
+    }
 }

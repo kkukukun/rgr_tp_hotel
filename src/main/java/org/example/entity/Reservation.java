@@ -4,7 +4,6 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.util.Collection;
 
 @Entity
@@ -16,7 +15,7 @@ public class Reservation {
     @Column(name = "price", nullable = true, precision = 0)
     private Float price;
     @Column(name = "date", nullable = true)
-    private Date date;
+    private String date;
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(targetEntity=Room.class, mappedBy = "reservation", cascade = {CascadeType.ALL})
     private Collection<Room> rooms;
@@ -43,15 +42,15 @@ public class Reservation {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
