@@ -65,6 +65,10 @@ public class ClientView {
             String name = scanner.nextLine();
             newClient.setName(name);
 
+            System.out.println("Введите фамилию: ");
+            String surname = scanner.nextLine();
+            newClient.setSurname(surname);
+
             System.out.println("Введите телефон: ");
             String tel = scanner.nextLine();
             newClient.setTelephone(tel);
@@ -98,8 +102,8 @@ public class ClientView {
     }
     public void run() throws SQLException {
         Scanner scanner = new Scanner(System.in);
-        boolean run = true;
-        while (run) {
+        boolean go = true;
+        while (go) {
             System.out.println("\n Выберите опцию, пожалуйста :");
             System.out.println(" Введите число : ");
             System.out.println(" 1. Показать всех клиентов");
@@ -126,7 +130,7 @@ public class ClientView {
                     getByIdClient();
                     break;
                 case 6:
-                    run = false;
+                    go = false;
                     break;
                 default:
                     System.out.println("Неверное число!");

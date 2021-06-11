@@ -24,7 +24,7 @@ public class ReservationView {
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Введите цену: ");
-            Integer price = scanner.nextInt();
+            Float price = scanner.nextFloat();
             newReservation.setPrice(price);
 
             System.out.println("Введите дату: ");
@@ -55,7 +55,7 @@ public class ReservationView {
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Введите цену: ");
-            Integer price = scanner.nextInt();
+            Float price = scanner.nextFloat();
             newReservation.setPrice(price);
 
             System.out.println("Введите дату: ");

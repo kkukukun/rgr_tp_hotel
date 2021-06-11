@@ -17,12 +17,12 @@ public class Room {
     private String typeOfRoom;
 
     @ManyToOne
-    @JoinColumn(name="id_staff")
+    @JoinColumn(name="id_staff", referencedColumnName = "id")
     private Staff staff;
 
     @ManyToOne
     @JoinColumn(name="id_reservation")
-    private Client client;
+     private Reservation reservation;
 
     public Long getId() {
         return id;
@@ -58,12 +58,12 @@ public class Room {
         this.typeOfRoom = typeOfRoom;
     }
 
-    public Client getReservation() {
-        return client;
+    public Reservation getReservation() {
+        return reservation;
     }
 
-    public void setReservation(Client client) {
-        this.client = client;
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
     }
 
     public Staff getStaff() {
@@ -82,7 +82,7 @@ public class Room {
                 ", amount=" + amount +
                 ", typeOfRoom='" + typeOfRoom + '\'' +
                 ", staff=" + staff +
-                ", reservation=" + client +
+                ", reservation=" + reservation +
                 '}';
     }
 }

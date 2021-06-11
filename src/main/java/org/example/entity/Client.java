@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
+@Table(name="client")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//автоматический генератор айди
@@ -22,8 +23,7 @@ public class Client {
     private String passport;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(targetEntity= Client.class, mappedBy = "client", cascade = {CascadeType.ALL})
-    private Collection<Client> clients;
+    @OneToMany( mappedBy = "client", cascade = {CascadeType.ALL})  private Collection<Reservation> reservations;
     public Long getId() {
         return id;
     }
@@ -59,12 +59,12 @@ public class Client {
         this.telephone = telephone;
     }
 
-    public Collection<Client> getReservations() {
-        return clients;
+    public Collection<Reservation> getReservations() {
+        return reservations;
     }
 
-    public void setReservations(Collection<Client> clients) {
-        this.clients = clients;
+    public void setReservations(Collection<Reservation> reservations) {
+        this.reservations = reservations;
     }
 
     public String getPassport() {
